@@ -10,11 +10,13 @@ import java.util.List;
 public class Account {
     protected String accountNumber;
     protected double balance;
+    protected double interestRate;
     protected Customer cust;
 
-    public Account(String accountNumber, double balance, Customer cust) {
+    public Account(String accountNumber, double balance, double interestRate, Customer cust) {
         this.accountNumber = accountNumber;
         this.balance = balance;
+        this.interestRate = interestRate;
         this.cust = cust;
     }
 
@@ -24,6 +26,10 @@ public class Account {
 
     public double getBalance() {
         return balance;
+    }
+
+    public double calculateInterest() {
+        return balance * interestRate;
     }
 
     // Get the cust (Customer) of the account
