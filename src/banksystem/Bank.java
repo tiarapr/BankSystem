@@ -74,5 +74,32 @@ public class Bank {
     public List<User> getUsers() {
         return users;
     }
+    
+    //Metode melihat semua list transaksi
+     public void viewAllTransactionHistories() {
+        System.out.println("\nAll Transaction Histories:");
+
+        for (User user : users) {
+            if (user instanceof Customer) {
+                Customer customer = (Customer) user;
+                List<Account> accounts = customer.getAccounts();
+
+                for (Account account : accounts) {
+                    System.out.println("Customer: " + customer.getName());
+                    System.out.println("Account Number: " + account.getAccountNumber());
+                    List<Transaction> transactions = account.getTransactions();
+
+                    if (transactions.isEmpty()) {
+                        System.out.println("No transactions available.");
+                    } else {
+                        System.out.println("Transactions:");
+                        for (Transaction transaction : transactions) {
+                            System.out.println(transaction.toString());
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
