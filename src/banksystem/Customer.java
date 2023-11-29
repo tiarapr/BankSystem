@@ -56,6 +56,8 @@ public class Customer extends User {
                 case 5:
                     viewTransaction();
                     break;
+                case 6:
+                    return; // Kembali ke menu utama
                 default:
                     System.out.println("Invalid choice.");
             }
