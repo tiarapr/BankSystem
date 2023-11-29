@@ -32,6 +32,7 @@ public class Customer extends User {
         while (true) {
             System.out.println("\nCustomer Menu:");
             System.out.println("1. View Balance");
+            System.out.println("2. Deposit");
             System.out.print("Enter choice: ");
 
             int choice = scanner.nextInt();
@@ -39,6 +40,9 @@ public class Customer extends User {
             switch (choice) {
                 case 1:
                     viewBalance();
+                    break;
+                case 2:
+                    deposit();
                     break;
                 default:
                     System.out.println("Invalid choice.");
@@ -54,6 +58,26 @@ public class Customer extends User {
         System.out.println("------------------------");
     }
 }
+
+    private void deposit() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\nEnter Account Number for Deposit: ");
+        String accountNumber = scanner.nextLine();
+        Account account = findAccount(accountNumber);
+
+        if (account != null) {
+            System.out.print("Enter Deposit Amount: ");
+            double amount = scanner.nextDouble();
+            if (amount > 0) {
+                account.deposit(amount);
+                System.out.println("Deposit successful. New balance: " + account.getBalance());
+            } else {
+                System.out.println("Invalid deposit amount.");
+            }
+        } else {
+            System.out.println("Account not found.");
+        }
+    }
 
     // Metode untuk mencari akun berdasarkan nomor akun
     private Account findAccount(String accountNumber) {

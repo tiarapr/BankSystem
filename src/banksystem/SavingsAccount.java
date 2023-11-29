@@ -18,6 +18,13 @@ public class SavingsAccount extends Account {
         balance += interest;
     }
 
+    // Override metode deposit jika diperlukan (opsional)
+    @Override
+    public void deposit(double amount) {
+        super.deposit(amount);
+        // Kode tambahan khusus untuk SavingsAccount, jika ada
+    }
+
     // Getter dan setter untuk interestRate
     public double getInterestRate() {
         return interestRate;

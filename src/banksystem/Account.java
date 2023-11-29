@@ -12,12 +12,14 @@ public class Account {
     protected double balance;
     protected double interestRate;
     protected Customer cust;
+    private List<Transaction> transactions;
 
     public Account(String accountNumber, double balance, double interestRate, Customer cust) {
         this.accountNumber = accountNumber;
         this.balance = balance;
         this.interestRate = interestRate;
         this.cust = cust;
+        this.transactions = new ArrayList<>();
     }
 
     public String getAccountNumber() {
@@ -26,6 +28,12 @@ public class Account {
 
     public double getBalance() {
         return balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        Transaction transaction = new Transaction(accountNumber, amount, "DEPOSIT");
+        transactions.add(transaction);
     }
 
     public double calculateInterest() {
