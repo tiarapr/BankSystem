@@ -152,6 +152,7 @@ public class BankSystem {
                             System.out.println("Accounts:");
                             for (Account account : accounts) {
                                 System.out.println("  Account Number: " + account.getAccountNumber());
+                                System.out.println("  Balance: " + account.getBalance());
                             }
                         }
                         System.out.println("------------------------");
@@ -171,9 +172,6 @@ public class BankSystem {
         }
        
     }
-
-    
-    
 
     public static void main(String[] args) {
         new BankSystem().start();
