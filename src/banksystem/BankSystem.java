@@ -161,7 +161,6 @@ public class BankSystem {
                 case 2:
                     bank.viewAllTransactionHistories();
                     break;
-                    
                 case 3:
                     // Kembali ke menu utama (tidak perlu tindakan tambahan)
                     break;
