@@ -31,5 +31,14 @@ public class CheckingAccount extends Account {
             System.out.println("Insufficient funds for withdrawal and transaction fee.");
         }
     }
+
+    // Getter dan setter untuk transactionFee
+    public double getTransactionFee() {
+        return transactionFee;
+    }
+
+    public void setTransactionFee(double transactionFee) {
+        this.transactionFee = transactionFee;
+    }
 }
 
