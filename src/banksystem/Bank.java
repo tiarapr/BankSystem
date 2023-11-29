@@ -50,7 +50,27 @@ public class Bank {
         return null; // Atau throw exception
     }
 
-    // Metode untuk mendapatkan semua pengguna
+    // Metode untuk transfer antar akun
+    public void transfer(String fromAccountNumber, String toAccountNumber, double amount) {
+        Account fromAccount = getAccount(fromAccountNumber);
+        Account toAccount = getAccount(toAccountNumber);
+
+        if (fromAccount == null || toAccount == null) {
+            System.out.println("One or both accounts not found.");
+            return;
+        }
+
+        if (fromAccount.getBalance() < amount) {
+            System.out.println("Insufficient funds in the source account.");
+            return;
+        }
+
+        fromAccount.withdraw(amount);
+        toAccount.deposit(amount);
+        System.out.println("Transferred " + amount + " from account " + fromAccountNumber + " to account " + toAccountNumber);
+    }
+
+     // Metode untuk mendapatkan semua pengguna
     public List<User> getUsers() {
         return users;
     }

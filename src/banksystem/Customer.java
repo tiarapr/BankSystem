@@ -34,6 +34,7 @@ public class Customer extends User {
             System.out.println("1. View Balance");
             System.out.println("2. Deposit");
             System.out.println("3. Withdraw");
+            System.out.println("4. Transfer");
             System.out.print("Enter choice: ");
 
             int choice = scanner.nextInt();
@@ -47,6 +48,9 @@ public class Customer extends User {
                     break;
                 case 3:
                     withdraw();
+                    break;
+                case 4:
+                    transfer();
                     break;
                 default:
                     System.out.println("Invalid choice.");
@@ -100,6 +104,31 @@ public class Customer extends User {
             }
         } else {
             System.out.println("Account not found.");
+        }
+    }
+
+    private void transfer() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\nEnter Source Account Number: ");
+        String sourceAccountNumber = scanner.nextLine();
+        System.out.print("Enter Destination Account Number: ");
+        String destinationAccountNumber = scanner.nextLine();
+
+        Account sourceAccount = findAccount(sourceAccountNumber);
+        Account destinationAccount = findAccount(destinationAccountNumber);
+
+        if (sourceAccount != null && destinationAccount != null) {
+            System.out.print("Enter Transfer Amount: ");
+            double amount = scanner.nextDouble();
+            if (amount > 0 && sourceAccount.getBalance() >= amount) {
+                sourceAccount.withdraw(amount);
+                destinationAccount.deposit(amount);
+                System.out.println("Transfer successful.");
+            } else {
+                System.out.println("Invalid transfer amount or insufficient balance.");
+            }
+        } else {
+            System.out.println("One or both accounts not found.");
         }
     }
 
