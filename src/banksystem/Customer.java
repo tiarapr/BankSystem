@@ -33,6 +33,7 @@ public class Customer extends User {
             System.out.println("\nCustomer Menu:");
             System.out.println("1. View Balance");
             System.out.println("2. Deposit");
+            System.out.println("3. Withdraw");
             System.out.print("Enter choice: ");
 
             int choice = scanner.nextInt();
@@ -43,6 +44,9 @@ public class Customer extends User {
                     break;
                 case 2:
                     deposit();
+                    break;
+                case 3:
+                    withdraw();
                     break;
                 default:
                     System.out.println("Invalid choice.");
@@ -73,6 +77,26 @@ public class Customer extends User {
                 System.out.println("Deposit successful. New balance: " + account.getBalance());
             } else {
                 System.out.println("Invalid deposit amount.");
+            }
+        } else {
+            System.out.println("Account not found.");
+        }
+    }
+
+    private void withdraw() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\nEnter Account Number for Withdrawal: ");
+        String accountNumber = scanner.nextLine();
+        Account account = findAccount(accountNumber);
+
+        if (account != null) {
+            System.out.print("Enter Withdrawal Amount: ");
+            double amount = scanner.nextDouble();
+            if (amount > 0 && account.getBalance() >= amount) {
+                account.withdraw(amount);
+                System.out.println("Withdrawal successful. New balance: " + account.getBalance());
+            } else {
+                System.out.println("Invalid withdrawal amount or insufficient balance.");
             }
         } else {
             System.out.println("Account not found.");

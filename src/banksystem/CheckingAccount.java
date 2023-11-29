@@ -5,6 +5,8 @@ package banksystem;
  * @author Tiara
  */
 public class CheckingAccount extends Account {
+    private double transactionFee;
+
     // Konstruktor untuk CheckingAccount
     public CheckingAccount(String accountNumber, double balance, double interestRate, Customer cust) {
         super(accountNumber, balance, interestRate, cust);
@@ -16,6 +18,18 @@ public class CheckingAccount extends Account {
         super.deposit(amount);
         balance -= transactionFee; // Mengurangi biaya transaksi dari saldo
         System.out.println("Deposited: " + amount + ". Transaction fee: " + transactionFee);
+    }
+
+    // Override metode withdraw
+    @Override
+    public void withdraw(double amount) {
+        if (amount + transactionFee <= balance) {
+            super.withdraw(amount);
+            balance -= transactionFee; // Mengurangi biaya transaksi dari saldo
+            System.out.println("Withdrawn: " + amount + ". Transaction fee: " + transactionFee);
+        } else {
+            System.out.println("Insufficient funds for withdrawal and transaction fee.");
+        }
     }
 }
 

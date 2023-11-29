@@ -36,6 +36,14 @@ public class Account {
         transactions.add(transaction);
     }
 
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        }
+        Transaction transaction = new Transaction(accountNumber, amount, "WITHDRAW");
+        transactions.add(transaction);
+    }
+
     public double calculateInterest() {
         return balance * interestRate;
     }

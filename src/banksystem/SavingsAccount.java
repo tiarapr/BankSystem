@@ -25,6 +25,13 @@ public class SavingsAccount extends Account {
         // Kode tambahan khusus untuk SavingsAccount, jika ada
     }
 
+    // Override metode withdraw jika diperlukan (opsional)
+    @Override
+    public void withdraw(double amount) {
+        super.withdraw(amount);
+        // Kode tambahan khusus untuk SavingsAccount, jika ada
+    }
+
     // Getter dan setter untuk interestRate
     public double getInterestRate() {
         return interestRate;
