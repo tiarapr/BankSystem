@@ -159,7 +159,7 @@ public class BankSystem {
                     }
                     break;
                 case 2:
-                    // Kode untuk Method view all transaction history (soon)
+                    bank.viewAllTransactionHistories();
                     break;
                     
                 case 3:

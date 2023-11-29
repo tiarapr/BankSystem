@@ -52,6 +52,10 @@ public class Account {
     public Customer getCust() {
         return cust;
     }
+    
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
 
     public void addTransaction(Transaction transaction) {
         transactions.add(transaction);

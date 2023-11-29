@@ -35,6 +35,7 @@ public class Customer extends User {
             System.out.println("2. Deposit");
             System.out.println("3. Withdraw");
             System.out.println("4. Transfer");
+            System.out.println("5. Transaction History");
             System.out.print("Enter choice: ");
 
             int choice = scanner.nextInt();
@@ -51,6 +52,9 @@ public class Customer extends User {
                     break;
                 case 4:
                     transfer();
+                    break;
+                case 5:
+                    viewTransaction();
                     break;
                 default:
                     System.out.println("Invalid choice.");
@@ -129,6 +133,24 @@ public class Customer extends User {
             }
         } else {
             System.out.println("One or both accounts not found.");
+        }
+    }
+
+    public void viewTransaction() {
+        System.out.println("\nTransaction History for " + getName());
+
+        for (Account account : accounts) {
+            List<Transaction> transactions = account.getTransactions();
+            System.out.println("\nAccount Number: " + account.getAccountNumber());
+
+            if (transactions.isEmpty()) {
+                System.out.println("No transactions available.");
+            } else {
+                System.out.println("Transactions:");
+                for (Transaction transaction : transactions) {
+                    System.out.println(transaction.toString());
+                }
+            }
         }
     }
 
