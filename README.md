@@ -1,5 +1,5 @@
 # BankSystem
-Aplikasi perbankan atau Bank Management System, dirancang untuk mengotomatisasi berbagai kegiatan perbankan. Dengan sistem ini, pengguna dapat dengan mudah melakukan berbagai operasi perbankan seperti login, pembuatan akun, pengecekan saldo, transfer dana, melihat riwayat transaksi, dan log out.
+Aplikasi perbankan atau Bank Management System Minimalis, dirancang untuk mengotomatisasi berbagai kegiatan perbankan. Dengan sistem ini, pengguna dapat dengan mudah melakukan berbagai operasi perbankan seperti login, pembuatan akun, pengecekan saldo, transfer dana, melihat riwayat transaksi, dan log out.
 
 Program bank ini dikembangkan menggunakan bahasa pemrograman Java. Serta, dirancang sebagai sistem pencatatan uang (bookkeeping) mirip dengan aplikasi perbankan minimalis yang dapat diakses melalui console.
 
