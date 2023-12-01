@@ -145,8 +145,8 @@ public class BankSystem {
                     System.out.println("\nAll Users and Their Accounts:");
 
                     for (User user : users) {
-                        System.out.println("User: " + user.getName());
                         if (user instanceof Customer) {
+                            System.out.println("User: " + user.getName());
                             Customer customer = (Customer) user;
                             List<Account> accounts = customer.getAccounts();
                             System.out.println("Accounts:");
