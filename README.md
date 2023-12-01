@@ -15,3 +15,7 @@ Terdapat dua jenis pengguna, yaitu admin dan pengguna biasa, dengan hak akses ya
 - Keamanan dan Privasi:
 Admin dapat melihat seluruh informasi nasabah, sementara pengguna biasa hanya dapat mengakses informasi pribadi.
 
+## Prasyarat
+Sebelum menggunakan aplikasi ini, pastikan bahwa prasyarat berikut terpenuhi:
+- JDK (versi >= 20) terinstall di sistem.
+- NetBeans (versi >=  18) terinstall di sistem
