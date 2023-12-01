@@ -36,6 +36,7 @@ public class Customer extends User {
             System.out.println("3. Withdraw");
             System.out.println("4. Transfer");
             System.out.println("5. Transaction History");
+            System.out.println("6. Exit");
             System.out.print("Enter choice: ");
 
             int choice = scanner.nextInt();
@@ -57,6 +58,7 @@ public class Customer extends User {
                     viewTransaction();
                     break;
                 case 6:
+                    System.out.println("Exiting system...");
                     return; // Kembali ke menu utama
                 default:
                     System.out.println("Invalid choice.");
