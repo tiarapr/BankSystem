@@ -97,6 +97,7 @@ public class Bank {
                             System.out.println(transaction.toString());
                         }
                     }
+                    System.out.println("------------------------");
                 }
             }
         }
