@@ -163,7 +163,7 @@ public class BankSystem {
                     break;
                 case 3:
                     // Kembali ke menu utama (tidak perlu tindakan tambahan)
-                    break;
+                    return;
                 default:
                     System.out.println("Invalid choice.");
             }   
